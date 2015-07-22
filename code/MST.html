@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>最小生成树</title>
+
+</head>
+<body>
+<h1>最小生成树</h1>
+
+<h3>简介</h3>
+
+<blockquote><p>一个有 n 个结点的连通图的生成树是原图的极小连通子图，且包含原图中的所有 n 个结点，并且有保持图连通的最少的边。 最小生成树可以用<strong>kruskal</strong>（克鲁斯卡尔）算法或<strong>prim</strong>（普里姆）算法求出。</p>
+
+<hr /></blockquote>
+
+<h2>kruskal</h2>
+
+<hr />
+
+<p><strong>算法描述</strong>：</p>
+
+<blockquote><p>克鲁斯卡尔算法需要对图的边进行访问，所以克鲁斯卡尔算法的时间复杂度只和边又关系，可以证明其时间复杂度为O（eloge）。</p></blockquote>
+
+<p><strong>算法过程</strong>：</p>
+
+<blockquote><p>1.将图各边按照权值进行排序
+2.将图遍历一次，找出权值最小的边，（条件：此次找出的边不能和已加入最小生成树集合的边构成环），若符合条件，则加入最小生成树的集合中。不符合条件则继续遍历图，寻找下一个最小权值的边。
+3.递归重复步骤1，直到找出n-1条边为止（设图有n个结点，则最小生成树的边数应为n-1条），算法结束。得到的就是此图的最小生成树。</p></blockquote>
+
+<p><strong>算法图示</strong></p>
+
+<p><img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.35.05.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.36.37.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.37.29.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.38.25.png" alt="Alt text" /><img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.39.03.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.39.17.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.39.43.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.39.57.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.40.27.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8A%E5%8D%8811.40.56.png" alt="Alt text" /></p>
+
+<hr />
+
+<hr />
+
+<p><strong>算法代码</strong>
+```</p>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxv = 1000;
+const int maxe = 500000;
+struct node{
+int frm,to,value;
+bool operator &lt; (node temp){
+    return  value &lt; temp.value;
+}
+}Edge[maxe];
+int fa[maxv];
+int find(int x){
+if(fa[x]!= x){
+    fa[x] = find(fa[x]);
+}
+return fa[x];
+}
+int main(){
+
+int n,m;
+cin &gt;&gt; n &gt;&gt; m;
+int ans = 0;
+for(int i = 0 ; i &lt; m;i++)
+{
+    cin &gt;&gt; Edge[i].frm &gt;&gt; Edge[i].to &gt;&gt;Edge[i].value;
+}
+for(int i = 0; i &lt; n;i++){
+    fa[i] = i;
+}
+sort(Edge,Edge+m);
+for(int i = 0 ; i&lt;m;i++){
+    int fx = find(Edge[i].frm),fy = find(Edge[i].to);
+    if (fx != fy) {
+        ans+=Edge[i].value;
+        fa[fx] = fy;
+    }
+}
+cout &lt;&lt; ans &lt;&lt;endl;
+return 0;
+}
+</code></pre>
+
+<h2>Prim</h2>
+
+<hr />
+
+<p><strong>基本思想：</strong></p>
+
+<blockquote><p>对于图G而言，V是所有顶点的集合；现在，设置两个新的集合U和T，其中U用于存放G的最小生成树中的顶点，T存放G的最小生成树中的边。 从所有uЄU，vЄ(V-U) (V-U表示出去U的所有顶点)的边中选取权值最小的边(u, v)，将顶点v加入集合U中，将边(u, v)加入集合T中，如此不断重复，直到U=V为止，最小生成树构造完毕，这时集合T中包含了最小生成树中的所有边。</p></blockquote>
+
+<p><strong>算法图示:</strong>
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.34.20.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.34.30.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.34.41.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.01.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.12.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.20.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.31.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.40.png" alt="Alt text" />
+<img src="./%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-07-21%20%E4%B8%8B%E5%8D%8812.35.57.png" alt="Alt text" /></p>
+
+<p> *以此类推 *</p>
+
+<p><strong>算法代码：</strong></p>
+
+<blockquote><p>在普里姆算法中，为了便于在集合U和(V-U)之间选取权值最小的边，需要设置两个辅助数组closest和lowcost，分别用于存放顶点的序号和边的权值。
+对于每一个顶点v∈V-U，closest[v]为U中距离v最近的一个邻接点，即边 (v，closest[v]) 是在所有与顶点v相邻、且其另一顶点j∈U的边中具有最小权值的边，其最小权值为lowcost[v]，即lowcost[v]=cost[v][closest[v]]，</p></blockquote>
+
+<pre><code>
+    #include&lt;iostream&gt;
+    #include&lt;cstdio&gt;
+    using namespace std;
+    const int MAXN = 1000;
+    const int INF = 1&lt;&lt;30;
+    int closest[MAXN], lowcost[MAXN], m;//m为节点的个数
+    int G[MAXN][MAXN];//邻接矩阵
+    int prim()
+    {
+    for(int i = 0;i &lt; m;i++)
+    {
+        lowcost[i]=INF;
+    }
+    for(int i = 0;i &lt; m;i++)
+    {
+        closest[i]=0;
+    }
+
+    closest[0]=-1;//加入第一个点，-1表示该点在集合U中，否则在集合V中
+    int num=0,ans=0,e=0;//e为最新加入集合的点
+
+    while(num&lt;m-1)//加入m-1条边
+    {
+        int micost= INF,miedge=-1;
+        for(int i=0;i &lt; m;i++){
+            if(closest[i]!=-1)
+            {
+                int temp=G[e][i];
+                if(temp&lt;lowcost[i])
+                {
+                    lowcost[i]=temp;
+                    closest[i]=e;
+                }
+                if(lowcost[i]&lt;micost)
+                    micost=lowcost[miedge=i];
+            }
+        }
+        ans+=micost;
+        closest[miedge]=-1;
+        closest[e=miedge]=-1;
+        num++;
+    }
+    return ans;
+    }
+</code></pre>
+
+<hr />
+
+<p><strong>注意：</strong></p>
+
+<blockquote><p>prim算法适合稠密图，其时间复杂度为O(n^2)，其时间复杂度与边得数目无关，而kruskal算法的时间复杂度为O(eloge)跟边的数目有关，适合稀疏图。</p></blockquote>
+</body>
+</html>
