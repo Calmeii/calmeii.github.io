@@ -1,0 +1,710 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>第一讲 程序设计基础</title>
+
+</head>
+<body>
+<h1>第一讲 程序设计基础</h1>
+
+<h2>程序的构成</h2>
+
+<ol>
+<li>只要会循环和判断，就会编程了！</li>
+<li>关于函数？
+ 将统一的操作封装到一起，方便使用</li>
+<li>关于数组和指针？
+ 对数据的存储操作</li>
+<li><p>关于输入输出？
+ 由硬件提供简单的指令</p></li>
+<li><p>程序的主要意义：
+ 通过大量的重复执行某些指令，能够快速得到人力无法在有生之年得出的结果。</p>
+
+<ol>
+<li>从上亿条信息中，找出规律：“买婴儿尿布的人多半会买啤酒”。</li>
+<li>判断2^57885161 - 1是否为素数。</li>
+<li>使用“必胜策略”下五子棋
+
+<h2>程序的编写过程</h2></li>
+</ol>
+</li>
+<li>设计：由总自分</li>
+<li><p>编码：由总自分，由分自总</p>
+
+<p>  例一：有一机器人，有4种操作指令，每类指令机器人会执行一系列操作（详细略）。编写程序，模拟用户输入指令后，机器人执行操作的过程。
+  例二：公司内部有多级职务，每一级职务的任务就是把所接收的任务拆分并交给下一级，直到最底层职员。请编写程序模拟该过程。</p></li>
+</ol>
+
+
+<h2>ACM竞赛中涉及的输入方式</h2>
+
+<ul>
+<li><p>读入一个数n,并读入接下来的n个数据</p>
+
+<blockquote><p>5 1 2 3 4 5</p></blockquote>
+
+<pre><code>  scanf(“%d”, &amp;n);
+  for (i = 0; i &lt; n; ++i) {
+  scanf("%d", &amp;arr[i]);
+  }
+</code></pre></li>
+<li><p>按行读入数据,需要能够确定行内数据的个数</p>
+
+<blockquote><p>1 2 3 4 5
+6 7 8</p></blockquote>
+
+<pre><code>  char str[100];
+  while(gets(str)) {
+  int i = 0, l, p = 0;
+  sscanf(str+p, “%d%n”, &amp;arr[i++], &amp;l) != EOF) {
+      p += l;
+  }
+  }
+</code></pre></li>
+<li><p>读入文本中所有的以&lt;>括起来的内容</p>
+
+<blockquote><p>&lt; html>&lt; body>kasjdflkja<1>sdas<2>s</p></blockquote>
+
+<pre><code>  char ans[]
+  int cnt = 0;
+  while (scanf("%c", &amp;ch) != EOF) {       //输入不为文件末尾
+      if (ch == '&lt;') {
+          while (1) {
+              scanf("%c", &amp;ch);
+              if (ch == '&gt;') {break;}
+           else {ans[cnt++] = ch;}
+          }
+      }
+  } //边读边处理
+</code></pre>
+
+<pre><code>  char buf[10000];
+  while (scanf(”%*[^&lt;]&lt;%[^&gt;]&gt;", buf) != EOF) {
+  …                                               
+  }
+</code></pre></li>
+<li><p>读入一个数字</p>
+
+<blockquote><pre><code>  scanf (“%d”, &amp;num);
+  scanf (“%f”, &amp;num);
+  scanf (“%lf”, &amp;num);
+  scanf (“%s”, num);
+</code></pre></blockquote></li>
+<li><p>读入时间</p>
+
+<blockquote><p>2014_01_02 12:30:45</p></blockquote>
+
+<pre><code>  int year, month, date, h, m, s;
+  scanf("%d-%d-%d %d:%d:%d", &amp;year, &amp;month, &amp;date, &amp;h, &amp;m, &amp;s);
+</code></pre></li>
+<li><p>依次读入多个字符,字符以空格隔开</p>
+
+<blockquote><p>a f d</p></blockquote>
+
+<pre><code>  scanf("%c%*c%c%*c%c", &amp;a, &amp;b, &amp;c);
+  //%*c忽略一个字符
+</code></pre>
+
+<h3>竞赛中使用的输入方法</h3></li>
+<li>c++方式未来再介绍，如：iostream, sstream之流</li>
+<li>getchar() getch()，<strong>在竞赛中禁用！！！！</strong></li>
+<li>gets()，用于读入整行数据。(结束标志为 回车'\n')</li>
+<li><p>scanf()，用于读入以<strong>不可见字符</strong>分隔的数据结束</p>
+
+<pre><code>  %d %I64d或%lld
+  %lf 或 %f  
+  %s %n
+  %c 尽量少用
+  %[] 正则表达式
+  %*c
+</code></pre></li>
+</ul>
+
+
+<h3>输入结束方式</h3>
+
+<ul>
+<li>根据题目给出的数据组数判断
+
+<ul>
+<li><p>输入第一行为k,表示有k组测试数据
+  <code>
+  int k;
+  scanf("%d", &amp;k);
+  while(k--){
+      scanf(XXX);
+      ...
+  }
+ </code></p></li>
+<li><p>输入仅有一组数据
+<code>
+scanf(XXX);
+</code></p></li>
+</ul>
+</li>
+<li>读入直到文件结束
+
+<ul>
+<li><p>输入包含多组数据, 每数组据包含XXX内容
+  如 每组测试数据包括 两个数 m n. 0 0表示输入结束
+<code>
+while(scanf("%d%d", &amp;x, &amp;y) &amp;&amp; !(x==0 &amp;&amp; y == 0)){
+  ...
+}
+</code></p></li>
+<li><p>输入以EOF结束
+<code>
+while(scanf(...)!=EOF);
+</code></p>
+
+<h3>竞赛中使用的输出方法</h3></li>
+</ul>
+</li>
+<li><strong>一般情况下，仅用printf与cout进行输出</strong></li>
+<li>printf与cout不能混用</li>
+<li>仅用printf进行输出
+      %d与%lld
+      %f与%lf
+      %s与%c
+      %3.3lf
+      %03d
+      %5s</li>
+<li><p>输出时间，格式要求：yyyy-MM-dd hh:mm:ss</p>
+
+<blockquote><p>2013-01-01 01:01:01</p></blockquote>
+
+<p>  <code>printf(“%04d-%02d-%02d %02d:%02d:%02d\n”, …);</code></p></li>
+<li><p>小数点后3位，四舍五入
+  <code>printf(“%.3lf\n”, f);</code></p></li>
+<li><p>小数点后3位，进一法
+  <code>printf(“%.3lf\n”, f+0.0005);</code></p>
+
+<h2>字符串的使用</h2>
+
+<h3>字符串的读入：scanf , gets , fgets.</h3></li>
+<li><p><strong>结束标志</strong>
+  scanf()的结束标志为 回车'\n',Tab'\t' 和空格' '.
+  fgets(), gets()的结束标志为 回车'\n'.</p>
+
+<pre><code>  //对于输入文本 "hello world!" 回车.
+  scanf("%s", string); // srting的内容为 "hello"
+  gets(string);        // string的内容为 "hello world"
+</code></pre></li>
+<li><p><strong>回车字符\n</strong>
+  scanf从stdin流，即终端输入，遇回车‘\n’停止，但‘\n’还在输入流中。
+  gets, fgets 输入时会连同回车'\n'一同读入,但不会存入数组中.</p>
+
+<pre><code>  //对于输入文本 "hello" 回车 'c' 回车.
+  scanf("%s", str); ch = getchar();   //ch读入的字符为 '\n'.
+  gets(str); ch = getchar();          //ch读入的字符为 'c'.
+</code></pre></li>
+<li><p><strong>安全</strong></p>
+
+<p>  gets使用时要注意，gets函数格式gets（a）；不检查内存空间，容易溢出。</p>
+
+<p>  fgets相对gets而言要安全点，格式fgets（<em>s，size，stdin），</em>s为地址，size为要读取的长度，stdin是从终端读取。</p></li>
+</ul>
+
+
+<h3>常用字符串函数</h3>
+
+<p>strlen(测量字符串长度)
+strstr(一个字符串中搜索另一个字符串)
+strcmp(字符串比较)
+strcpy与strncpy(字符串的复制)
+sscanf与sprintf(从字符串格式化读入,向字符串格式化写入)
+memset 这是一个内存初始化函数，初始化字符串可用<strong>初始值只能为0 和 -1</strong>
+<code>
+memset(str,0, sizeof(str));
+</code>
+<strong>atoi, itoa, atof, atol，禁用！！！！！</strong></p>
+
+<h2>高精度计算</h2>
+
+<h3>为什么要使用高精度?</h3>
+
+<p>计算下面这个结果：
+    > 32767+32767</p>
+
+<p>计算下面这个结果:
+    > 327673276732767+327673276732767</p>
+
+<p>计算下面这个结果：
+    > 327673276732767327673276732767 + 327673276732767327673276732767</p>
+
+<p>整数(int)数据范围为-2^32~2^32-1,长整数（long  long）数据范围为-2^64~2^64-1,如果十进数超过20位就不能胜任了。这时就要用到高精度数的运算了。</p>
+
+<h3>高精度储存</h3>
+
+<p>int w[100];一般为w[0]存储该数的位数，w[1]存个位，w[2]存十位，….
+如整数“120”，按高精度数存储：w[0]=3;w[1]=0;w[2]=2;w[3]=1。
+<strong>注意这里是倒着保存数的。这样做的目的在于进行运算时方便数位对齐。</strong>
+但由于是高精度数的运算可以多次用到，所以我们定义成函数形式方便使用。为了让函数能直接返回值，所以可以定义成结构体。
+<code>
+struct hp
+{
+  int w[10005];//   w[0]用于存储这个数的位数
+};
+</code></p>
+
+<h3>高精度计算</h3>
+
+<h4>1. 加法</h4>
+
+<p>高精度数相加实际上就是模拟我们自己计算加法的过程。
+步骤 1.对应位相加 2.进位.高精度加法类似</p>
+
+<pre><code>hp jia(hp a, hp b)
+{
+    hp c;
+    memset(c.w, 0, sizeof(c.w)); //将c.w里所有数清0.
+    c.w[0] = a.w[0] &gt; b.w[0] ? a.w[0] : b.w[0];//初步估算位数
+    for(int i = 1; i &lt;= c.w[0]; i++){
+        c.w[i] = a.w[i]+b.w[i];    //对应位相加
+    }
+    for(int i = 1; i &lt;= c.w[0]; i++){
+        if(c.w[i] &gt;= 10){
+            c.w[i] %= 10;
+            c.w[i+1] += 1;  //进位
+        }
+    }
+    if(c.w[c.w[0]+1] != 0)c.w[0]++;
+    return c;
+}
+</code></pre>
+
+<h4>2. 乘法</h4>
+
+<p>高精度乘法也是模拟计算乘法
+步骤 1.对应位相乘 2.进位</p>
+
+<pre><code>hp cheng(hp a, hp b)
+{
+    hp c;
+    memset(c.w, 0, sizeof(c.w)); //将c.w里所有数清0.
+    c.w[0] = a.w[0] + b.w[0] - 1;   //初步估算结果的位数
+    for(int i = 1; i &lt;= a.w[0]; i++){
+        for(int j = 1; j &lt;= b.w[0]; j++){
+            c.w[i+j-1] += a.w[i] * b.w[j];  //每一位相乘
+        }
+    }
+    for(int i = 1; i &lt;= c.w[0]; i++){
+        if(c.w[i] &gt;= 10){
+            c.w[i+1] += c.w[i] / 10;
+            c.w[i] %= 10;
+        }
+    }
+    if(c.w[c.w[0]+1] != 0)c.w[0]++; // 计算精确位数
+    return c;
+}
+</code></pre>
+
+<h3>高精度的输出</h3>
+
+<p>高精度的输出方式为从最高位输出到最低位
+<code>
+void print(hp c)
+{
+    for(int i = c.w[0]; i &gt;= 1; i--){   //输出
+    printf("%d", c.w[i]);
+    }
+    printf("\n");
+}
+</code></p>
+
+<h3>高精度的输入</h3>
+
+<p>因为高精度的数已经不能用int 和 long long来储存.所以自然也不能用scanf("%d%lld")来输入.
+输入方法为:
+1. 将高精度数储存到字符串中
+2. 把字符串转化为 struct hp 变量,用于之后的计算
+    > 输入数据 123456789123456789
+<code>
+hp input()
+{
+    hp a;
+    memset(a.w, 0, sizeof(a.w))
+    char str[100];
+    scanf("%s", str);       //将数字用数组保存
+    int len = strlen(str);
+    a.w[0] = len;
+    for(int i = len-1; i &gt;= 0; i--){
+        a.w[len- i] = str[i] - '0';     //通过位置关系构建高精度数.
+    }
+    return a;
+}
+</code></p>
+
+<p>第一章的内容就讲完了.接下来看看这道题
+<a href="http://acm.bnu.edu.cn/v3/problem_show.php?pid=2508">Bull Math</a>
+Input
+    > 输入包括两行 每一行是一个不超过40位的数字</p>
+
+<p>Output
+    > 输出这两个数的乘积</p>
+
+<p>代码:</p>
+
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+
+struct hp
+{
+    int w[100];
+};
+
+hp cheng(hp a, hp b)
+{
+    hp c;
+    memset(c.w, 0, sizeof(c.w)); //将c.w里所有数清0.
+    c.w[0] = a.w[0] + b.w[0] - 1;   //初步估算结果的位数
+    for(int i = 1; i &lt;= a.w[0]; i++){
+        for(int j = 1; j &lt;= b.w[0]; j++){
+            c.w[i+j-1] += a.w[i] * b.w[j];  //每一位相乘
+        }
+    }
+    for(int i = 1; i &lt;= c.w[0]; i++){
+        if(c.w[i] &gt;= 10){
+            c.w[i+1] += c.w[i] / 10;
+            c.w[i] %= 10;
+        }
+    }
+    if(c.w[c.w[0]+1] != 0)c.w[0]++; // 计算精确位数
+    return c;
+}
+
+void print(hp c)
+{
+    for(int i = c.w[0]; i &gt;= 1; i--){   //输出
+    printf("%d", c.w[i]);
+    }
+    printf("\n");
+}
+
+hp input()
+{
+    hp a;
+    memset(a.w, 0 ,sizeof(a.w));
+    char str[100];
+    scanf("%s", str);
+    int len = strlen(str);
+    a.w[0] = len;
+    for(int i = len-1; i &gt;= 0; i--){
+        a.w[len- i] = str[i] - '0';
+    }
+    return a;
+}
+
+int main()
+{
+    hp a, b;
+    a = input();    // 输入a
+    b = input();    // 输入b
+    hp c = cheng(a, b);     // 计算 a * b
+    print(c);   //输出结果c
+    return 0;
+}
+</code></pre>
+</body>
+</html>
