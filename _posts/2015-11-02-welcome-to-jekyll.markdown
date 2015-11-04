@@ -4,9 +4,7 @@ title:  "模版文章"
 date:   2015-11-04 16:20:02 +0800
 categories: 生活 游戏
 ---
-
-##大标题
-ruby 代码测试
+开始不能用代码
 
 {% highlight ruby %}
 def print_hi(name)
