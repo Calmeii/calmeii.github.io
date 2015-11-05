@@ -4,6 +4,7 @@ title: 测试背景图片
 description: "css 添加博客背景图片"
 tags: [测试博客]
 categories: [测试]
+published: false
 image:
   background: triangular.png
 ---
