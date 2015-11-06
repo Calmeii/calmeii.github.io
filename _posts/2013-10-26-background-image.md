@@ -2,9 +2,9 @@
 layout: post
 title: 测试背景图片
 description: "css 添加博客背景图片"
-tags: [测试博客]
+tags: [测试]
 categories: [测试]
-published: false
+published: true
 image:
   background: triangular.png
 ---

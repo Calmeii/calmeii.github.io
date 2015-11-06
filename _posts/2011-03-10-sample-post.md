@@ -3,7 +3,8 @@ layout: post
 title: markdown测试
 description: "测试所有可能用到的主题: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2014-12-24
-tags: [测试markdown基本功能]
+date: 2015-11-05
+tags: [测试]
 categories: [测试]
 ---
 
